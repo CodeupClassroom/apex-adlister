@@ -26,4 +26,18 @@ public class ShowStudentServlet extends HttpServlet {
 
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        String name = request.getParameter("name");
+
+        if(name.equals("admin")){
+            response.sendRedirect("/bad-place");
+        }
+
+        out.println("<h1>This is your post param: " + name + "</h1>");
+    }
+
 }
