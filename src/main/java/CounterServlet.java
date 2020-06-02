@@ -12,9 +12,19 @@ public class CounterServlet extends HttpServlet {
     int counter = 0;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        counter++;
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+
+        try{
+            if(request.getParameter("reset").equals("1")){
+                counter = 0;
+            }
+        }catch(NullPointerException ex){
+            ex.printStackTrace();
+        }
+
+        counter++;
         out.println("Counter: <strong>" + counter + "</strong>");
     }
 }
