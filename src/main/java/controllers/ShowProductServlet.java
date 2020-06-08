@@ -20,7 +20,6 @@ public class ShowProductServlet extends HttpServlet {
             request.setAttribute("product", product);
         } catch (IndexOutOfBoundsException ex){
             request.setAttribute("error", "Product does not exist");
-            ex.printStackTrace();
         }
 
 
