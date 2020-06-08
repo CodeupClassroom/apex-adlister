@@ -22,6 +22,8 @@ public class CreateProductServlet extends HttpServlet {
 
         DaoFactory.getProductsDao().insert(newProduct);
 
+        response.sendRedirect("/products");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

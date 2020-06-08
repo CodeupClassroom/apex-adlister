@@ -9,24 +9,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>All products</title>
+    <title>One Product</title>
 </head>
 <body>
 
-<h1>All products</h1>
+<c:if test="${error != ''}">
+    <h3>${error}</h3>
+</c:if>
 
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-    </tr>
-    <c:forEach var="product" items="${products}">
-        <tr>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-        </tr>
-    </c:forEach>
-</table>
+
+<h1>One product</h1>
+
+<div>
+    <h3>${product.name}</h3>
+    <p>${product.price}</p>
+</div>
 
 </body>
 </html>

@@ -29,4 +29,9 @@ public class ListProducts implements Products {
     public void insert(Product product) {
         this.products.add(product);
     }
+
+    @Override
+    public Product findOne(long id) throws IndexOutOfBoundsException {
+        return products.get( (int) (id - 1) );
+    }
 }
