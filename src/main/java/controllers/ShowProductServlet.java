@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "ShowProductServlet", urlPatterns = "/product")
@@ -22,6 +23,8 @@ public class ShowProductServlet extends HttpServlet {
             request.setAttribute("error", "Product does not exist");
         }
 
+        HttpSession session = request.getSession();
+        request.setAttribute("isAdmin", session.getAttribute("isAdmin"));
 
         request.getRequestDispatcher("/products/show.jsp").forward(request, response);
     }

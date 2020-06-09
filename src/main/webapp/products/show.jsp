@@ -25,5 +25,11 @@
         <p>${product.price}</p>
     </div>
 </c:if>
+
+<c:if test="${isAdmin != null}">
+    <div>
+        Super admin menu goes here.
+    </div>
+</c:if>
 </body>
 </html>
