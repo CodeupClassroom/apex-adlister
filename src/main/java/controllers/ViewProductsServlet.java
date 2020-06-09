@@ -18,6 +18,6 @@ public class ViewProductsServlet extends HttpServlet {
         Products products = DaoFactory.getProductsDao();
         List<Product> productList = products.all();
         request.setAttribute("products", productList);
-        request.getRequestDispatcher("/products/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/products/index.jsp").forward(request, response);
     }
 }

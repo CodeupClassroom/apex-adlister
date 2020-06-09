@@ -26,6 +26,6 @@ public class ShowProductServlet extends HttpServlet {
         HttpSession session = request.getSession();
         request.setAttribute("isAdmin", session.getAttribute("isAdmin"));
 
-        request.getRequestDispatcher("/products/show.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/products/show.jsp").forward(request, response);
     }
 }

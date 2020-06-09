@@ -27,6 +27,6 @@ public class CreateProductServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/products/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/products/create.jsp").forward(request, response);
     }
 }
